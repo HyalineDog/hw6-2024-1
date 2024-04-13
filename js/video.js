@@ -43,20 +43,25 @@ document.querySelector("#skip").addEventListener("click", function() {
 });
 
 document.querySelector("#mute").addEventListener("click", function() {
-	console.log('Mute');
 	if (video.muted == false) {
+		console.log('Mute');
 		video.muted = true;
 		document.querySelector("#mute").innerHTML = "Unmute";
 	} else {
+		console.log('Unmute');
 		video.muted = false;
 		document.querySelector("#mute").innerHTML = "Mute";
 	}
 });
 
 document.querySelector("#slider").addEventListener("change", function() {
-	console.log('Volume Change');
 	video.volume = this.value / 100;
 	document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
+	console.log('The current volume is ' + video.volume);
+	if(video.volume != 1) {
+		console.log('The percentage of current volume is ' + video.volume * 100 + '%');
+		document.querySelector("#volume").innerHTML = 'The percentage of current volume is ' + video.volume * 100 + '%';
+	}
 });
 
 document.querySelector("#vintage").addEventListener("click", function() {
