@@ -60,7 +60,7 @@ document.querySelector("#slider").addEventListener("change", function() {
 	console.log('The current volume is ' + video.volume);
 	if(video.volume != 1) {
 		console.log('The percentage of current volume is ' + video.volume * 100 + '%');
-		document.querySelector("#volume").innerHTML = 'The percentage of current volume is ' + video.volume * 100 + '%';
+		document.querySelector("#volume").innerHTML =video.volume * 100 + '%';
 	}
 });
 
